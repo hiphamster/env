@@ -1,3 +1,89 @@
+"-----------------------------------------------------------------------------------------
+" NOTES 
+"-----------------------------------------------------------------------------------------
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+" VIM searches 'runtimepath' for syntax files, help, etc. If VIM is manually
+" built, thr 'rtp' needs to change to reflect the new VIM location, or a
+" symlink needs to be added from where vim is installed to /usr/share/vim
+
+
+"-----------------------------------------------------------------------------------------
+" VUNDLE START
+"-----------------------------------------------------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'L9'
+
+" cd ~/.vim/bundle/command-t && make 
+" cd ~/.vim/bundle/command-t/ruby/command-t && make 
+Bundle 'wincent/command-t'
+
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+Bundle 'Lokaltog/vim-easymotion'
+
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+Bundle 'tpope/vim-rails.git'
+
+" sets 'path' in vim to match CLASSPATH for jvm langs
+Bundle 'tpope/vim-classpath'
+
+" vim-scripts repos
+Bundle 'FuzzyFinder'
+
+" git repos on your local machine (ie. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+" 
+Bundle 'breeze.vim'
+
+" nerdtree
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+
+ "Clojure
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-leiningen'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"-----------------------------------------------------------------------------------------
+" VUNDLE END
+"-----------------------------------------------------------------------------------------
+
 set number
 syn on
 
@@ -5,7 +91,6 @@ set modeline
 
 set ai                " auto indent
 set nottybuiltin
-set nocompatible
 
 set backspace=2		    " backspace can join lines
 
@@ -24,33 +109,29 @@ set tabstop=2
 
 "always show the status line
 set laststatus=2
+
 set statusline=%1*[%Y]%F\%(\ %m%r%H%)%=%3P<%l,%c>
 " set statusline=%<%f\ %y\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 "set hlsearch         " highlight search matches
+
 set joinspaces		    " Join adds two spaces after a period.
+
 filetype plugin on	  " plugins are enabled
 
-" Let K ask man for the word under the cursor 
-set keywordprg=man\ -s 
+set keywordprg=man\ -s  " Let K ask man for the word under the cursor 
 
-set showmatch
+set showcmd           " show current uncompleted command?  
 
-"   showcmd:          Show current uncompleted command?  
-set showcmd
+set showmatch         " show the matching bracket for the last ')'? 
 
-"   showmatch:        Show the matching bracket for the last ')'?
-set showmatch
+set showmode          " show the current mode?  
 
-"   showmode:         Show the current mode?  
-set showmode
-
-" enable spell checking
-" this enables "STRANGE" highlighting - all misspelled words are highlighted 
 setlocal spell spelllang=en_us
-set spellfile=~/.spellfile.utf8.add
-" disable for now
-set nospell
+
+"set spellfile=~/.spellfile.utf8.add
+
+set nospell         " disabling for now because it causes "STRANGE" highlighting 
 
 " testing
 " zyw - puts word under the cursor into a named register, in this case 'z'
@@ -77,7 +158,6 @@ map <C-l> "zyw:exe "silent !tmux split-window -l 10 'pydoc '".@z.""<CR>
 map <C-p> "i:exe "silent !tmux split-window -l 10 'bash '"<CR>
 " -----------------------------------------------------------------------------
 
-
 " this is annoying 
 " autocmd! BufWritePost *.js JSHint
 
@@ -85,69 +165,6 @@ map <C-p> "i:exe "silent !tmux split-window -l 10 'bash '"<CR>
 :set nobackup
 :set nowritebackup 
 :endif
-
-
-" -----------------------------------------------------------------------------
-" VUNDLE https://github.com/gmarik/Vundle.vim
-" -----------------------------------------------------------------------------
-
-" set nocompatible              " be iMproved
- filetype off                   " required!
-
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
-
- " let Vundle manage Vundle
- Bundle 'gmarik/vundle'
-
- " original repos on github
- Bundle 'tpope/vim-fugitive'
-
- Bundle 'Lokaltog/vim-easymotion'
-
- Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-
- Bundle 'tpope/vim-rails.git'
-
- " sets 'path' in vim to match CLASSPATH for jvm langs
- Bundle 'tpope/vim-classpath'
-
- " vim-scripts repos
- Bundle 'L9'
- Bundle 'FuzzyFinder'
-
- " non github repos
- " FYI - 
- " cd ~/.vim/bundle/command-t && make 
- " cd ~/.vim/bundle/command-t/ruby/command-t && make 
- Bundle 'wincent/command-t'
-
- " git repos on your local machine (ie. when working on your own plugin)
- "Bundle 'file:///Users/gmarik/path/to/plugin'
- " 
- Bundle 'breeze.vim'
-
- " nerdtree
-Bundle 'scrooloose/nerdtree'
-
- "Clojure
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-leiningen'
-" -----------------------------------------------------------------------------
-
- syntax on
- filetype plugin indent on     " required!
- "
- " Brief help
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
- "
- " see :h vundle for more details or wiki for FAQ
- " NOTE: comments after Bundle command are not allowed..
- "
 
 " syntastic
 let g:syntastic_enable_perl_checker = 0
@@ -177,3 +194,11 @@ autocmd FileType python :set tabstop=4
 autocmd FileType python :set shiftwidth=4
 autocmd FileType perl   :set tabstop=2
 autocmd FileType perl   :set shiftwidth=2
+
+" folds perl subs
+" zO - unfold all
+" zo - unfold under cursor 
+" zC - fold all
+" zc - fold under cursor 
+" :help fold
+let perl_fold=1
