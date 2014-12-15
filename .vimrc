@@ -84,17 +84,22 @@ filetype plugin indent on    " required
 " VUNDLE END
 "-----------------------------------------------------------------------------------------
 
-set number
-syn on
+set noswapfile        " don't create swp/swo files 
+
+set number            " show line number
+
+syn on                " enable syntax highliting
 
 set modeline
 
 set ai                " auto indent
+
 set nottybuiltin
 
 set backspace=2		    " backspace can join lines
 
 set smarttab		      " <Tab> at start of line tabs <shiftwidth> chars
+
 set ruler		          " show cursor position
 
 " The following eats gcc and SGI cc/CC
