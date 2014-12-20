@@ -1,6 +1,23 @@
 "-----------------------------------------------------------------------------------------
 " NOTES 
 "-----------------------------------------------------------------------------------------
+" compiling vim - 
+"
+" ./configure --prefix=/usr/local \
+"              --with-features=huge \
+"              --enable-multibyte \
+"              --enable-gui=no \
+"              --without-x \
+"              --with-tlib=tinfo \
+"              --enable-rubyinterp \
+"              --with-ruby-command=/usr/bin/ruby \
+"              --enable-pythoninterp \
+"              --with-python-config-dir=/usr/lib/python2.7/config \
+"              --enable-perlinterp \
+"              --enable-luainterp
+"
+" make VIMRUNTIMEDIR=/usr/share/vim/vim74
+"
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "
 " VIM searches 'runtimepath' for syntax files, help, etc. If VIM is manually
@@ -84,22 +101,17 @@ filetype plugin indent on    " required
 " VUNDLE END
 "-----------------------------------------------------------------------------------------
 
-set noswapfile        " don't create swp/swo files 
-
-set number            " show line number
-
-syn on                " enable syntax highliting
+set number
+syn on
 
 set modeline
 
 set ai                " auto indent
-
 set nottybuiltin
 
 set backspace=2		    " backspace can join lines
 
 set smarttab		      " <Tab> at start of line tabs <shiftwidth> chars
-
 set ruler		          " show cursor position
 
 " The following eats gcc and SGI cc/CC
