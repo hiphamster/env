@@ -1,11 +1,13 @@
 #lo
 test -f '/home/default_user/bashrc' && source '/home/default_user/bashrc'
-
 shopt -s cmdhist
 shopt -s histappend
 
 # tmux likes it better
 export TERM=screen
+
+# prevet ctrl-d from exiting current shell
+set -o ignoreeof
 
 test $HOME/.inputrc || set -o vi
 
@@ -24,10 +26,13 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export EDITOR=vi
 export GREP_COLOR='1;32'
 
-# removing .mysqlrc 
-special_files=(.aliases .functions .javarc .oraclerc .postgres .vmware .pyenvrc .lo) 
+special_files=(.aliases .functions .javarc .oraclerc .mysqlrc .postgres .vmware .inputrc .pyenvrc .lo)  
 for file in ${special_files[@]}; do
   test -f ${HOME}/${file} && source ${HOME}/${file};
 done
+
+test -f ${HOME}/perl5/perlbrew/etc/bashrc && source  ${HOME}/perl5/perlbrew/etc/bashrc 
+
+test -f ${HOME}/.pythonrc && export PYTHONSTARTUP="${HOME}/.pythonrc"
 
 #vim:ts=2:sw=2:expandtab:syn=sh

@@ -11,12 +11,16 @@ linux () {
   PATH="${PATH}:${HOME}/bin"
 
   # plenv
-  export PATH="$HOME/.plenv/bin:$PATH"
-  eval "$(plenv init -)"
+  if [ -f ${HOME}.plenv ]; then
+    export PATH="$HOME/.plenv/bin:$PATH"
+    eval "$(plenv init -)"
+  fi
 
   # rbenv
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+  if [ -f ${HOME}.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+  fi
 }
 
 if [ "$(expr $OSTYPE : darwin)" -gt "0" ]; then  
