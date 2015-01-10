@@ -11,13 +11,13 @@ linux () {
   PATH="${PATH}:${HOME}/bin"
 
   # plenv
-  if [ -f ${HOME}.plenv ]; then
+  if [ -d ${HOME}/.plenv ]; then
     export PATH="$HOME/.plenv/bin:$PATH"
     eval "$(plenv init -)"
   fi
 
   # rbenv
-  if [ -f ${HOME}.rbenv ]; then
+  if [ -d ${HOME}/.rbenv ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
   fi
