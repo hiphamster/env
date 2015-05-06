@@ -37,51 +37,83 @@ call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
+"-----------------------------------------------------------------------------------------
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
+"-----------------------------------------------------------------------------------------
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-
+"-----------------------------------------------------------------------------------------
 Plugin 'L9'
+"-----------------------------------------------------------------------------------------
+Bundle 'bling/vim-airline'
 
+let g:airline_theme='murmur'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+"-----------------------------------------------------------------------------------------
+Bundle 'jeetsukumaran/vim-buffergator'
+"-----------------------------------------------------------------------------------------
 " cd ~/.vim/bundle/command-t && make 
 " cd ~/.vim/bundle/command-t/ruby/command-t && make 
 Bundle 'wincent/command-t'
-
+"-----------------------------------------------------------------------------------------
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
+"-----------------------------------------------------------------------------------------
 Bundle 'Lokaltog/vim-easymotion'
-
+"-----------------------------------------------------------------------------------------
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-
+"-----------------------------------------------------------------------------------------
 Bundle 'tpope/vim-rails.git'
-
+"-----------------------------------------------------------------------------------------
 " sets 'path' in vim to match CLASSPATH for jvm langs
 Bundle 'tpope/vim-classpath'
-
+"-----------------------------------------------------------------------------------------
 " vim-scripts repos
 Bundle 'FuzzyFinder'
-
+"-----------------------------------------------------------------------------------------
 " git repos on your local machine (ie. when working on your own plugin)
 "Bundle 'file:///Users/gmarik/path/to/plugin'
 " 
-Bundle 'breeze.vim'
-
+"Bundle 'breeze.vim'
+"-----------------------------------------------------------------------------------------
 " nerdtree
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
-
+"-----------------------------------------------------------------------------------------
  "Clojure
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-leiningen'
-
+"-----------------------------------------------------------------------------------------
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -100,7 +132,8 @@ filetype plugin indent on    " required
 "-----------------------------------------------------------------------------------------
 " VUNDLE END
 "-----------------------------------------------------------------------------------------
-
+" enable 256 colors
+set t_Co=256
 set number
 syn on
 
@@ -123,6 +156,8 @@ set complete=.,w,b,u,t,i
 set expandtab
 set shiftwidth=2
 set tabstop=2
+
+set nowrap
 
 "always show the status line
 set laststatus=2
