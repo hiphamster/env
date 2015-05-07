@@ -79,6 +79,9 @@ nmap <leader>h :bprevious<CR>
 " This replicates the idea of closing a tab
 nmap <leader>bq :bp <BAR> bd #<CR>
 
+" Remapping 'bq', because it quits vim
+nmap bd :bq<CR>
+
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
@@ -119,7 +122,8 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-leiningen'
 "-----------------------------------------------------------------------------------------
-
+Bundle 'tmux-plugins/vim-tmux'
+"-----------------------------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
