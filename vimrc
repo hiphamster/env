@@ -116,6 +116,7 @@ Bundle 'FuzzyFinder'
 " nerdtree
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+nmap <leader>nt :NERDTreeTabsToggle<CR>
 "-----------------------------------------------------------------------------------------
  "Clojure
 Bundle 'guns/vim-clojure-static'
@@ -201,6 +202,10 @@ set nospell         " disabling for now because it causes "STRANGE" highlighting
 " will open new tab and use that word a filename 
 map <C-t> "zyw:exe "tabe ".@z.""<CR>
 
+" -----------------------------------------------------------------------------
+" Perl
+" -----------------------------------------------------------------------------
+nmap <leader>pc :w !perl -c<CR>
 " -----------------------------------------------------------------------------
 " THIS REQUIRES TMUX!!!! 
 " -----------------------------------------------------------------------------
