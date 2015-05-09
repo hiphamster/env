@@ -84,7 +84,6 @@ nmap bd :bq<CR>
 
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
-
 "-----------------------------------------------------------------------------------------
 Bundle 'jeetsukumaran/vim-buffergator'
 "-----------------------------------------------------------------------------------------
@@ -201,7 +200,10 @@ set nospell         " disabling for now because it causes "STRANGE" highlighting
 " and WORD; the command below will put a word under the cursor into z reg,
 " will open new tab and use that word a filename 
 map <C-t> "zyw:exe "tabe ".@z.""<CR>
-
+" -----------------------------------------------------------------------------
+" Perl
+" -----------------------------------------------------------------------------
+Bundle 'majutsushi/tagbar'
 " -----------------------------------------------------------------------------
 " Perl
 " -----------------------------------------------------------------------------
