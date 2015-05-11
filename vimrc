@@ -80,7 +80,7 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Remapping 'bq', because it quits vim
-nmap bd :bq<CR>
+nmap <leader>bd :bq<CR>
 
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
@@ -99,7 +99,7 @@ Bundle 'Lokaltog/vim-easymotion'
 "-----------------------------------------------------------------------------------------
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "-----------------------------------------------------------------------------------------
-Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-rails'
 "-----------------------------------------------------------------------------------------
 " sets 'path' in vim to match CLASSPATH for jvm langs
 Bundle 'tpope/vim-classpath'
