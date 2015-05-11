@@ -124,6 +124,41 @@ Bundle 'tpope/vim-leiningen'
 "-----------------------------------------------------------------------------------------
 Bundle 'tmux-plugins/vim-tmux'
 "-----------------------------------------------------------------------------------------
+Plugin 'ivalkeen/vim-simpledb'
+let g:simpledb_show_timing = 0
+"-----------------------------------------------------------------------------------------
+Plugin 'benmills/vimux'
+"-----------------------------------------------------------------------------------------
+"Snippets - chunks of pre-build code 
+"Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+"-----------------------------------------------------------------------------------------
+" Vertical indentation for blocks
+Plugin 'Yggdroot/indentLine'
+" will move this to Java.vim
+" vertical line indentation
+"let g:indentLine_color_term = 239
+"let g:indentLine_color_gui = '#09AA08'
+"let g:indentLine_char = '│'
+"-----------------------------------------------------------------------------------------
+" automatically close parentheses and brackets
+Plugin 'Raimondi/delimitMate'
+let delimitMate_expand_cr = 1
+"-----------------------------------------------------------------------------------------
+" Provides insert mode compleation 
+Plugin 'ervandew/supertab'
+"-----------------------------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
