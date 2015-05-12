@@ -1,0 +1,7 @@
+export JAVA_HOME=/opt/jdk1.8.0_25
+export CLASSPATH=$JAVA_HOME/lib
+export ECLIPSE_HOME=/opt/eclipse
+
+# aliases
+alias start_eclim="$ECLIPSE_HOME/eclimd"
+alias stop_eclim="$ECLIPSE_HOME/eclimd -command shutdonw"
