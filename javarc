@@ -1,4 +1,4 @@
-[[ $(uname) =~ 'Darwin' ]] && export JAVA_HOME=/usr/libexec/java_home
+[[ $(uname) =~ 'Darwin' ]] && export JAVA_HOME=$(/usr/libexec/java_home)
 [[ $(uname) =~ 'Linux' ]] && export JAVA_HOME=/opt/java_home
 export CLASSPATH=$JAVA_HOME/lib:.
 export ECLIPSE_HOME=/opt/eclipse
