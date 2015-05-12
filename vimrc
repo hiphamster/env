@@ -102,7 +102,8 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails'
 "-----------------------------------------------------------------------------------------
 " sets 'path' in vim to match CLASSPATH for jvm langs
-Bundle 'tpope/vim-classpath'
+" this plugin interferes with eclim and causes A LOT OF PAIN!!!!
+" Bundle 'tpope/vim-classpath'
 "-----------------------------------------------------------------------------------------
 " vim-scripts repos
 Bundle 'FuzzyFinder'
