@@ -67,7 +67,8 @@ set hidden
 
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
-nmap <leader>T :enew<cr>
+" 'T' doesn't seem to work
+nmap <leader>tt :enew<cr>
 
 " Move to the next buffer
 nmap <leader>l :bnext<CR>
@@ -102,8 +103,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails'
 "-----------------------------------------------------------------------------------------
 " sets 'path' in vim to match CLASSPATH for jvm langs
-" this plugin interferes with eclim and causes A LOT OF PAIN!!!!
-" Bundle 'tpope/vim-classpath'
+Bundle 'tpope/vim-classpath'
 "-----------------------------------------------------------------------------------------
 " vim-scripts repos
 Bundle 'FuzzyFinder'
