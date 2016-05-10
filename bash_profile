@@ -96,3 +96,8 @@ tmux_on_startup() {
 #fi
 
 #vim:ts=2:sw=2:expandtab:syn=sh
+export PATH="$HOME/.plenv/bin:$PATH"
+eval "$(plenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

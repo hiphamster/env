@@ -1,2 +1,4 @@
 set editing-mode vi
-set keymap vi-command
+
+# causes sadness in lein repl
+# set keymap vi-command
