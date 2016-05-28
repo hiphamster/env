@@ -1,15 +1,15 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ayelluas/.oh-my-zsh
+# export ZSH=/home/ayelluas/.oh-my-zsh
+export ZSH=${HOME}/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
- ZSH_THEME="robbyrussell-ay"
-#ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell-ay"
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -53,32 +53,14 @@ CASE_SENSITIVE="true"
 plugins=(git)
 
 # User configuration
-if [ -f $HOME/.aliases ]; then
-  source $HOME/.aliases
-fi
 
-export PATH="$HOME/.plenv/shims:$HOME/.plenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/ayelluas/Users/ayelluas/.plenv/bin:/opt/local/bin:/opt/local/sbin:/Users/ayelluas/.pyenv/bin:/Users/ayelluas/perl5/bin:/Users/ayelluas/bin:/Applications/VirtualBox.app/Contents/MacOS"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# vi mode
-bindkey -v
-
-#function zle-line-init zle-keymap-select {
-#    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-#    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_custom_status) $EPS1"
-#    zle reset-prompt
-#}
-#
-#zle -N zle-line-init
-#zle -N zle-keymap-select
-
-# timeout after hitting 'esc' 
-export KEYTIMEOUT=1
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -101,12 +83,6 @@ export KEYTIMEOUT=1
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# do not share history files between shessions
-setopt nosharehistory
-
-if [ -f ~/.plenv/completions/plenv.zsh ]; then
-  source ~/.plenv/completions/plenv.zsh
-fi
-
+PATH=$PATH:/home/ayelluas/bin
+export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init - zsh)"
