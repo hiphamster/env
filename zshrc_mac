@@ -71,7 +71,7 @@ export LANG=en_US.UTF-8
 # vi mode
 bindkey -v
 
-# timeout after hitting 'esc' in 0.1 of a second 
+# timeout after hitting 'esc' 
 export KEYTIMEOUT=1
 
 # Preferred editor for local and remote sessions
