@@ -86,9 +86,14 @@ alias pickle_start='VBoxManage startvm Pickle --type headless'
 
 
 alias lein_classpath="lein classpath | perl -e '\$f = <>; @t = split /:/, \$f; \$f=join \"\\n\", @t; print \"\$f\\n\";'"
-alias cqlsh="$HOME/stuff/datastax-ddc-3.2.1/bin/cqlsh --no-color --cqlversion=3.2.0"
+# alias cqlsh="$HOME/stuff/datastax-ddc-3.2.1/bin/cqlsh --no-color --cqlversion=3.2.0"
+alias cqlsh="$HOME/stuff/apache-cassandra-3.5/bin/cqlsh --no-color --cqlversion=3.2.0"
 
 alias awsdb2="mysql --host='awsdb2.caprica.liveops.com' --port=3306 --user='readonly' --password='spend\$lot'"
 alias dbvm04="mysql --host='dbvm04.lv1.liveops.com'     --port=3306 --user='ccrtm' --password='ccrtm_dbctlusr'"
 alias dbdev3="mysql --host='dbdev3.lab.liveops.com'     --port=3306 --user='readonly' --password='spend\$lot'"
 
+
+alias vim=nvim
+
+# CQLSH_PORT=9042 /home/ayelluas/stuff/apache-cassandra-3.5/bin/cqlsh --no-color --cqlversion=3.2.1 us-east-1-dev-dse.liveopslabs.com
