@@ -117,3 +117,6 @@ eval "$(pyenv init - zsh)"
 
 
 
+
+export NVM_DIR="/home/ayelluas/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
