@@ -18,7 +18,7 @@ HYPHEN_INSENSITIVE="true"
 export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -31,15 +31,11 @@ if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
 
-unset PATH;
-PATH="$HOME/.plenv/shims:$HOME/.plenv/bin"
-PATH="$PATH:$HOME/.pyenv/shims:$HOME/.pyenv/bin"
-PATH="$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:"
-
 # OS X
 if [ "$(uname -s)" = "Darwin" ];
 then
-  PATH="$PATH:/opt/local/bin:/opt/local/sbin"
+  # ad macports to path
+  PATH="$PATH:/opt/local/sbin:/opt/local/bin"
   PATH="$PATH:/Applications/VirtualBox.app/Contents/MacOS"
 fi
 
@@ -69,21 +65,17 @@ export ARCHFLAGS="-arch $(uname -m)"
 # perl
 export PLENV_ROOT="$HOME/.plenv"
 export PATH="$PLENV_ROOT/bin:$PATH"
-eval "$(plenv init - zsh)"
 
 if [ -f ~/.plenv/completions/plenv.zsh ]; then
   source ~/.plenv/completions/plenv.zsh
 fi
-
 eval "$(plenv init - zsh)"
 
 # python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
 
 if [ -f ~/.pyenv/completions/pyenv.zsh ]; then
   source ~/.pyenv/completions/pyenv.zsh
 fi
-
 eval "$(pyenv init - zsh)"
