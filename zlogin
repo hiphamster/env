@@ -3,15 +3,16 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Alex Yelluas <ayelluas@gmail.com>
 #
 
 # Execute code that does not affect the current session in the background.
 {
   # Compile the completion dump to increase startup speed.
-  dump_file="$HOME/.zcompdump"
-  if [[ "$dump_file" -nt "${dump_file}.zwc" || ! -s "${dump_file}.zwc" ]]; then
-    zcompile "$dump_file"
-  fi
+#  dump_file="$HOME/.zcompdump"
+#  if [[ "$dump_file" -nt "${dump_file}.zwc" || ! -s "${dump_file}.zwc" ]]; then
+#    zcompile "$dump_file"
+#  fi
 
   # Set environment variables for launchd processes.
   if [[ "$OSTYPE" == darwin* ]]; then

@@ -3,12 +3,10 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Alex Yelluas <ayelluas@gmail.com>
 #
 
 # Print the message.
 cat <<-EOF
-
-Thank you. Come again!
-  -- Dr. Apu Nahasapeemapetilon
+Bye for now!
 EOF
-

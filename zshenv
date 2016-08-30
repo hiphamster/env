@@ -3,6 +3,7 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Alex Yelluas <ayelluas@gmail.com>
 #
 
 # Set the path to Oh My Zsh.
@@ -55,8 +56,8 @@ if [[ -z "$LANG" ]]; then
 fi
 
 # Editors
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
 
 # Browser (Default)

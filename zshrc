@@ -1,3 +1,10 @@
+#
+# Sets Oh My Zsh options.
+#
+# Authors:
+#   Alex Yelluas <ayelluas@gmail.com>
+#
+
 # Path to your oh-my-zsh installation.
 export ZSH=${HOME}/.oh-my-zsh
 
@@ -79,3 +86,4 @@ if [ -f ~/.pyenv/completions/pyenv.zsh ]; then
   source ~/.pyenv/completions/pyenv.zsh
 fi
 eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init -)"
