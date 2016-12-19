@@ -1,0 +1,15 @@
+#!/bin/zsh
+dot_files=(aliases functions zlogout zprofile zshrc)
+
+for file in $dot_files; do
+  destination="${HOME}/.$file"
+  command="ln -s $(pwd)/${file} $destination" 
+  # in zsh $command has to be evaled
+  [ -f $destination ] || eval $command
+done
+
+# oh-my-zsh theme customization
+destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
+command="ln -s $(pwd)/robbyrussell-ay.zsh-theme $destination"
+[ -f $destination ] || eval $command
+

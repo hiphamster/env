@@ -38,6 +38,10 @@ if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
 
+if [ -f $HOME/.functions ]; then
+  source $HOME/.functions
+fi
+
 # OS X
 if [ "$(uname -s)" = "Darwin" ];
 then
