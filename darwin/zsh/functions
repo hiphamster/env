@@ -12,7 +12,7 @@ function env_changes () {
   changes=$?
   popd &>/dev/null
 
-  if [ $changes > 0 ]; then
+  if [ $changes != 0 ]; then
     echo true;
   else
     echo false;
