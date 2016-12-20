@@ -3,8 +3,8 @@ os
     aliases 
     functions
 
-i.e. darwin_zsh_aliases, linux_bash_functions
+
 
 todo:
-  reminder to push to origin
-  env var with settings
+  reminder to push to origin - done
+  env var with settings      - done
