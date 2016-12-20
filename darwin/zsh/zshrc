@@ -79,7 +79,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init -)"
 
-if [ $(env_changes) ]; then
+if $(env_changes); then
   echo "There are unmerged changes to the dot files, please merge";
   echo "execute 'pushd \$ENV_HOME; git status' to see details";  
 fi
