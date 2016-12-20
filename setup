@@ -1,5 +1,5 @@
 #!/bin/zsh
-OS=$(uname | tr '[A-Z]' '[a-z]')
+OS=$(uname -s | tr '[A-Z]' '[a-z]')
 ENV_HOME="${HOME}/.config/env"
 _SHELL=$(echo $SHELL | awk -F '/' '{print $NF}')
 FILE_PATH="${ENV_HOME}/${OS}/${_SHELL}"

@@ -1,2 +1,16 @@
 function str2epoch () { date -d "$1" "+%s"; }
 function epoch2str () { date -d "@$1"; }
+
+function env_changes () {
+  if [ -z  "${ENV_HOME}" ]; then
+    echo "ERR: ENV_HOME not set!";
+    return -1
+  fi
+
+  pushd $ENV_HOME &>/dev/null  
+  $(git diff-index --quiet HEAD)
+  changes=$?
+  popd &>/dev/null
+
+  echo $changes 
+}
