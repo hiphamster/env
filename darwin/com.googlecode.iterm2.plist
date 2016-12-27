@@ -46,7 +46,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>315 451 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>482 309 1290 724 0 0 1920 1177 </string>
+	<string>701 362 794 597 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>247 132 1053 452 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -652,7 +652,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>EE224669-89D1-47DB-854F-6391A720EF4E</string>
 	<key>NoSyncLastTipTime</key>
-	<real>503905380.31376499</real>
+	<real>503992319.95988297</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -677,6 +677,7 @@
 		<string>0010</string>
 		<string>0011</string>
 		<string>0012</string>
+		<string>0013</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -722,11 +723,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-12-20T05:43:00Z</date>
+	<date>2016-12-21T05:43:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
 	<string>3.0.12</string>
 </dict>
