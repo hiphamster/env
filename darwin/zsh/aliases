@@ -43,3 +43,7 @@ alias crontab="VIM_CRONTAB=true crontab"
 alias vim=nvim
 alias vi=vim
 
+# docker
+alias docker_rm_exited='docker rm $(docker ps -a | grep -i exited | awk "{print $1}")'
+
+
