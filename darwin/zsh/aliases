@@ -46,4 +46,6 @@ alias vi=vim
 # docker
 alias docker_rm_exited='docker rm $(docker ps -a | grep -i exited | awk "{print $1}")'
 
+# darwin
+alias ldd='otool -L'
 
