@@ -41,7 +41,6 @@ plugins=(git)
 [ -f $HOME/.aliases ]   && source $HOME/.aliases
 [ -f $HOME/.functions ] && source $HOME/.functions
 
-
 # neovim is built separately from macports
 PATH="/opt/neovim/bin:${PATH}"
 
