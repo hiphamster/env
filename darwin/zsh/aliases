@@ -1,16 +1,13 @@
 # darwin/zsh/aliases
-
 alias cls='clear; ls'
 alias cp='cp -i'
 alias cx='chmod +x'
 alias fssh='ssh -o '\''StrictHostKeyChecking no'\'''
-alias g='grep'
-alias gi='grep -i'
-alias gir='grep -ir'
-alias girl='grep -irl'
-alias gl='grep -l'
-alias gnc='grep --color=never'
-alias gr='grep -r'
+alias grep='grep --text --color=auto'
+# --exclude-dir={.bzr,CVS,.git,.hg,.svn}
+
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias l1='/bin/ls -1'
 alias la='ls -a'
 alias ll='ls -l'
@@ -30,9 +27,6 @@ alias kill_chrome="killall -m Chrome"
 alias ll='ls -Al'
 alias la='ls -A'
 alias lh='ls -Alh'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias tstmp='date +%Y-%m-%d-%H.%M.%S'
 alias vimclean="find . -iname '*sw[po]' -print -delete"
 alias chme='sudo chown -R ${USER}:staff'
