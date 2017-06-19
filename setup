@@ -22,5 +22,5 @@ command="ln -s $(pwd)/robbyrussell-ay.zsh-theme $destination"
 # ln -s ~/.vim ~/.config/nvim
 # ln -s ~/.vimrc ~/.config/nvim/init.vim
 
-
+test -d $HOME/.tmux/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
