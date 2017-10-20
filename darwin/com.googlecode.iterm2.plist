@@ -8,6 +8,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>84707F72-CCBB-4598-B9F9-B453350EAC42</string>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -46,15 +48,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1332 832 445 77 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 607 620 392 0 0 1920 1177 </string>
+	<string>650 608 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 163 606 456 0 0 1920 1200 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>315 429 918 495 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>318 601 1346 452 0 0 1920 1177 </string>
+	<string>53 698 650 452 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>500 142 650 452 0 0 1920 1177 </string>
+	<string>500 142 650 894 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>679 679 570 402 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -745,7 +747,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-27T18:22:08Z</date>
+	<date>2017-10-20T19:56:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
@@ -755,6 +757,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.1</string>
+	<string>3.1.2</string>
 </dict>
 </plist>
