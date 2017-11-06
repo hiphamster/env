@@ -703,6 +703,8 @@
 		<string>0022</string>
 		<string>0023</string>
 	</array>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -747,16 +749,18 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-20T19:56:34Z</date>
+	<date>2017-11-06T21:11:55Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.2</string>
+	<string>3.1.4</string>
 </dict>
 </plist>
