@@ -43,3 +43,6 @@ alias docker_rm_exited='docker rm $(docker ps -a | grep -i exited | awk "{print 
 # darwin
 alias ldd='otool -L'
 
+# filter
+alias color_code_filter='gsed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
+
