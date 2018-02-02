@@ -33,6 +33,8 @@ alias chme='sudo chown -R ${USER}:staff'
 alias procperuser='ps ax -o user | sort | uniq -c | sort -nr'
 
 # other
+# alias youtube-dl='docker run --rm -u $(id -u):$(id -g) -v $PWD:/data vimagick/youtube-dl'
+# alias ffmpeg='docker run jrottenberg/ffmpeg'
 alias crontab="VIM_CRONTAB=true crontab"
 alias vim=nvim
 alias vi=vim
