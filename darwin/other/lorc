@@ -1,7 +1,0 @@
-alias lo_dev_aws='mysql -h 10.31.5.105 -u varanread --password='\''spend$lot'\'''
-
-alias awsdb2="mysql --host='awsdb2.caprica.liveops.com' --port=3306 --user='readonly' --password='spend\$lot'"
-alias dbvm04="mysql --host='dbvm04.lv1.liveops.com'     --port=3306 --user='ccrtm' --password='ccrtm_dbctlusr'"
-alias dbdev3="mysql --host='dbdev3.lab.liveops.com'     --port=3306 --user='readonly' --password='spend\$lot'"
-
-# CQLSH_PORT=9042 /home/ayelluas/stuff/apache-cassandra-3.5/bin/cqlsh --no-color --cqlversion=3.2.1 us-east-1-dev-dse.liveopslabs.com
