@@ -93,10 +93,6 @@ if $(env_changes); then
   echo "execute 'pushd \$ENV_HOME; git status' to see details";  
 fi
 
-# replicant
-[ -f ~/.config/replicant/replicatntrc ] && 
-  source ~/.config/replicant/replicatntrc 
-
 # google cloud
 [ -f /Users/ayelluas/stuff/google-cloud-sdk/completion.zsh.inc ] && 
   source /Users/ayelluas/stuff/google-cloud-sdk/completion.zsh.inc 
