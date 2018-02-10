@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 OS=$(uname -s | tr '[A-Z]' '[a-z]')
 ENV_HOME="${HOME}/.config/env"
 _SHELL=$(echo $SHELL | awk -F '/' '{print $NF}')
@@ -8,7 +8,7 @@ DOT_FILES=($(ls -1 ${FILE_PATH}))
 
 for file in $DOT_FILES; do
   destination="${HOME}/.$file"
-  command="ln -s ${FILE_PATH}/${file} $destination" 
+  command="ln -s ${FILE_PATH}/${file} $destination"
   # in zsh $command has to be evaled
   [ -f $destination ] || eval $command
 done
@@ -18,9 +18,13 @@ destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
 command="ln -s $(pwd)/robbyrussell-ay.zsh-theme $destination"
 [ -f $destination ] || eval $command
 
-# vim
-# ln -s ~/.vim ~/.config/nvim
-# ln -s ~/.vimrc ~/.config/nvim/init.vim
-
-test -d $HOME/.tmux/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-test -d $HOME/.plenv || git clone https://github.com/tokuhirom/plenv.git ~/.plenv
+test -d $HOME/.tmux/tpm ||
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+test -d $HOME/.plenv ||
+  git clone https://github.com/tokuhirom/plenv.git ~/.plenv
+test -d $HOME/.pyenv ||
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv;
+test -d $HOME/.pyenv/plugins/pyenv-virtualenv ||
+  git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+test -d $HOME/.vim/bundle ||
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
