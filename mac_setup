@@ -5,7 +5,7 @@
 # https://www.macports.org/install.php
 
 # Macports packages
-sudo port install zsh neovim tmux curl
+sudo /opt/local/bin/port install zsh neovim tmux curl
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -14,7 +14,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 curl -L -k -O https://download.docker.com/mac/stable/Docker.dmg 
 
 # Other ports
-sudo port install antiword \
+sudo /opt/local/bin/port install antiword \
 aria2 \
 bzip2 \
 gd2 \
