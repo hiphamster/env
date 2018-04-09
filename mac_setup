@@ -13,6 +13,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Docker
 curl -L -k -O https://download.docker.com/mac/stable/Docker.dmg 
 
+# while read line; do port info --pretty $line | grep Description done < uniq_ports >> desc
+
 # Other ports
 sudo port install antiword \
 aria2 \
