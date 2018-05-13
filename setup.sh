@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 source env_tools.sh
 OS=$(uname -s | tr '[A-Z]' '[a-z]')
 ENV_HOME="${HOME}/.config/env"
