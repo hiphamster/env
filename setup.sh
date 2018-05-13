@@ -5,9 +5,9 @@ ENV_HOME="${HOME}/.config/env"
 mkdir -p $ENV_HOME
 
 # bash or zsh
-_SHELL=$(echo $SHELL | awk -F '/' '{print $NF}')
+SHELL=${1:-zsh}
 
-FILE_PATH="${ENV_HOME}/${OS}/${_SHELL}"
+FILE_PATH="${ENV_HOME}/${OS}/${SHELL}"
 DOT_FILES=($(ls -1 ${FILE_PATH}))
 
 for file in ${DOT_FILES[@]}; do
