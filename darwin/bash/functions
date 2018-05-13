@@ -1,0 +1,2 @@
+function str2epoch () { date -d "$1" "+%s"; }
+function epoch2str () { date -d "@$1"; }

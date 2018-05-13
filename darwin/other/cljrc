@@ -1,0 +1,1 @@
+alias lein_classpath="lein classpath | perl -e '\$f = <>; @t = split /:/, \$f; \$f=join \"\\n\", @t; print \"\$f\\n\";'"

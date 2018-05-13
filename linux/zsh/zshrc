@@ -1,0 +1,89 @@
+#
+# Sets Oh My Zsh options.
+#
+# Authors:
+#   Alex Yelluas <ayelluas@gmail.com>
+#
+
+# Path to my env package
+export ENV_HOME="${HOME}/.config/env"
+[ -e ${ENV_HOME} ] || mkdir -p ${ENV_HOME}
+
+# Path to your oh-my-zsh installation.
+export ZSH=${HOME}/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell-ay"
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+export UPDATE_ZSH_DAYS=7
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+# User configuration
+[ -f $HOME/.aliases ]   && source $HOME/.aliases
+[ -f $HOME/.functions ] && source $HOME/.functions
+
+
+# neovim is built separately from macports
+PATH="/opt/neovim/bin:${PATH}"
+
+# Add macports to path
+PATH="${PATH}:/opt/local/sbin:/opt/local/bin"
+PATH="${PATH}:/Applications/VirtualBox.app/Contents/MacOS"
+export PATH="${PATH}:${HOME}/bin"
+
+# export MANPATH="/usr/local/man:$MANPATH"
+[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# timeout after hitting 'esc' 
+export KEYTIMEOUT=1
+
+# do not share history files between shessions
+setopt nosharehistory
+
+# vi mode
+bindkey -v
+
+# Compilation flags
+export ARCHFLAGS="-arch $(uname -m)"
+
+# perl
+export PLENV_ROOT="$HOME/.plenv"
+export PATH="$PLENV_ROOT/bin:$PATH"
+
+[ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
+eval "$(plenv init - zsh)"
+
+# python
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+[ -f ~/.pyenv/completions/pyenv.zsh ] && source ~/.pyenv/completions/pyenv.zsh
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init -)"
+
+if $(env_changes); then
+  echo "There are unmerged changes to the dot files, please merge";
+  echo "execute 'pushd \$ENV_HOME; git status' to see details";  
+fi

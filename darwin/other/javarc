@@ -1,0 +1,9 @@
+[[ $(uname) =~ 'Darwin' ]] && export JAVA_HOME=$(/usr/libexec/java_home)
+[[ $(uname) =~ 'Linux' ]] && export JAVA_HOME=/opt/java_home
+export CLASSPATH=$JAVA_HOME/lib:.
+export ECLIPSE_HOME=/opt/eclipse
+
+# aliases
+alias start_eclim="DISPLAY=:1 $ECLIPSE_HOME/eclimd -b"
+alias stop_eclim="$ECLIPSE_HOME/eclimd -command shutdown"
+alias start_xvfg="Xvfb :1 -screen 0 1280x1024x8"

@@ -1,0 +1,48 @@
+# darwin/zsh/aliases
+alias cls='clear; ls'
+alias cp='cp -i'
+alias cx='chmod +x'
+alias fssh='ssh -o '\''StrictHostKeyChecking no'\'''
+alias grep='grep --text --color=auto'
+# --exclude-dir={.bzr,CVS,.git,.hg,.svn}
+
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias l1='/bin/ls -1'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -al'
+alias llh='ls -lh'
+alias ls='ls -FG'
+alias mv='mv -i'
+alias pc='perl -c'
+alias pd='perldoc'
+alias pdm='perldoc -m'
+alias rm='rm -i'
+alias si='svn info'
+alias kill_fox='killall -m firefox'
+alias kill_chrome="killall -m Chrome"
+
+## Tommy Butler
+alias ll='ls -Al'
+alias la='ls -A'
+alias lh='ls -Alh'
+alias tstmp='date +%Y-%m-%d-%H.%M.%S'
+alias vimclean="find . -iname '*sw[po]' -print -delete"
+alias chme='sudo chown -R ${USER}:staff'
+alias procperuser='ps ax -o user | sort | uniq -c | sort -nr'
+
+# other
+alias crontab="VIM_CRONTAB=true crontab"
+alias vim=nvim
+alias vi=vim
+
+# docker
+alias docker_rm_exited='docker rm $(docker ps -a | grep -i exited | awk "{print $1}")'
+
+# darwin
+alias ldd='otool -L'
+
+# filter
+alias color_code_filter='gsed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
+
