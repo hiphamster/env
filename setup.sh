@@ -1,5 +1,9 @@
 #!/bin/zsh
-source env_tools.sh
+
+# install oh-my-zsh
+test -d ~/.oh-my-zsh || \
+  curl -L -o - https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | zsh
+
 OS=$(uname -s | tr '[A-Z]' '[a-z]')
 ENV_HOME="${HOME}/.config/env"
 mkdir -p $ENV_HOME
