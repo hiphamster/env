@@ -21,7 +21,7 @@ alias pdm='perldoc -m'
 alias rm='rm -i'
 alias si='svn info'
 alias kill_fox='killall -m firefox'
-alias kill_chrome="killall -m Chrome"
+alias kill_chrome="killall -m 'Google Chrome'"
 
 ## Tommy Butler
 alias ll='ls -Al'
