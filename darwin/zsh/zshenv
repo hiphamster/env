@@ -60,6 +60,11 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
+# ayelluas python virtualenv
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
+
 # Browser (Default)
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
