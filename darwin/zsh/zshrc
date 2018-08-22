@@ -44,8 +44,13 @@ plugins=(git)
 [ -f $HOME/.functions ] && 
   source $HOME/.functions
 
+
+# reset PATH
+unset PATH
+source <(/usr/libexec/path_helper)
+
 # neovim is built separately from macports
-PATH="/opt/neovim/bin:${PATH}"
+# PATH="/opt/neovim/bin:${PATH}"
 
 # Add macports to path
 PATH="/opt/local/sbin:/opt/local/bin:${PATH}"
