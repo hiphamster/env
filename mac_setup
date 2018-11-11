@@ -38,6 +38,7 @@ python3_select \
 python_select \
 readline \
 sqlite3 \
+tidy \
 tree \
 unzip \
 p7zip \

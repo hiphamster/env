@@ -44,6 +44,8 @@ plugins=(git)
 [ -f $HOME/.functions ] && 
   source $HOME/.functions
 
+# html tidy config file
+export HTML_TIDY="${HOME}/.config/nvim/tidy.conf"
 
 # reset PATH
 unset PATH
