@@ -83,8 +83,8 @@ export PLENV_ROOT="$HOME/.plenv"
 export PATH="$PLENV_ROOT/bin:$PATH"
 
 [ -f ~/.plenv/completions/plenv.zsh ] && 
-  source ~/.plenv/completions/plenv.zsh
-eval "$(plenv init - zsh)"
+  source ~/.plenv/completions/plenv.zsh && 
+  eval "$(plenv init - zsh)"
 
 # python
 export PYENV_ROOT="$HOME/.pyenv"
