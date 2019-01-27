@@ -5,7 +5,7 @@
 # https://www.macports.org/install.php
 
 # Macports packages
-sudo /opt/local/bin/port install zsh neovim tmux curl
+sudo /opt/local/bin/port install zsh neovim tmux curl git
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -52,3 +52,6 @@ p7zip \
 
 # These ports take a while to install
 # sudo port install ffmpeg youtube-dl
+
+# powerline fonts
+# git clone https://github.com/powerline/fonts.git --depth=1
