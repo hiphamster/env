@@ -95,6 +95,12 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init -)"
 
+# mysql / mariadb
+if [ -e /opt/local/lib/mariadb-10.1 ]; then
+  export MYSQL_HOME=/opt/local/lib/mariadb-10.1
+  export PATH=$PATH:$MYSQL_HOME/bin
+fi
+
 if $(env_changes); then
   echo "There are unmerged changes to the dot files, please merge";
   echo "execute 'pushd \$ENV_HOME; git status' to see details";  

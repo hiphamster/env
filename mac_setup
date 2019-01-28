@@ -5,18 +5,21 @@
 # https://www.macports.org/install.php
 
 # Macports packages
-sudo /opt/local/bin/port install zsh neovim tmux curl git
+yes | sudo /opt/local/bin/port install zsh neovim tmux curl git
+
+sudo sh -c 'echo /opt/local/bin/zsh >>/etc/shells'
+sudo chpass -s '/opt/local/bin/zsh' $USER
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Docker
-curl -L -k -O https://download.docker.com/mac/stable/Docker.dmg 
+# curl -L -k -O https://download.docker.com/mac/stable/Docker.dmg 
 
 # while read line; do port info --pretty $line | grep Description done < uniq_ports >> desc
 
 # Other ports
-sudo /opt/local/bin/port install antiword \
+yes | sudo /opt/local/bin/port install antiword \
 aria2 \
 bzip2 \
 gd2 \
@@ -54,4 +57,4 @@ p7zip \
 # sudo port install ffmpeg youtube-dl
 
 # powerline fonts
-# git clone https://github.com/powerline/fonts.git --depth=1
+git clone https://github.com/powerline/fonts.git --depth=1
