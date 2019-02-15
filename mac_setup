@@ -5,7 +5,7 @@
 # https://www.macports.org/install.php
 
 # Macports packages
-yes | sudo /opt/local/bin/port install zsh neovim tmux curl git
+yes | sudo /opt/local/bin/port install zsh neovim tmux curl git ack
 
 sudo sh -c 'echo /opt/local/bin/zsh >>/etc/shells'
 sudo chpass -s '/opt/local/bin/zsh' $USER
