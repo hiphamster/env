@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # install oh-my-zsh
 test -d ~/.oh-my-zsh || \
