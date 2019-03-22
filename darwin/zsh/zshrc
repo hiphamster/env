@@ -115,3 +115,7 @@ fi
 
 export CLOUDSDK_COMPUTE_ZONE=us-west1-c
 export CLOUDSDK_COMPUTE_REGION=us-west1
+
+# https://github.com/sharkdp/bat
+# bat pager is evil
+export BAT_PAGER=''

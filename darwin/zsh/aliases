@@ -38,6 +38,7 @@ alias procperuser='ps ax -o user | sort | uniq -c | sort -nr'
 alias crontab="VIM_CRONTAB=true crontab"
 alias vim=nvim
 alias vi=vim
+alias cat=bat
 
 # docker
 alias docker_rm_exited='docker rm $(docker ps -a | grep -i exited | awk "{print $1}")'
