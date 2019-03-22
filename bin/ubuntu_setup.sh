@@ -1,21 +1,17 @@
-
-
-
-
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl 
 
 sudo apt-get install apt-file
 sudo apt-file update
 
 apt-get install docker.io
 
-apt-get install zsh neovim tmux curl git ack-grep
+apt-get install zsh neovim tmux curl git ack-grep wget curl git
 
 
 # docker without root

@@ -68,20 +68,24 @@ bindkey -v
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
 
-# perl
-export PLENV_ROOT="$HOME/.plenv"
-export PATH="$PLENV_ROOT/bin:$PATH"
+# plenv (perl)
+if [ -e ~/.plenv ]; then
+	export PLENV_ROOT="$HOME/.plenv"
+	export PATH="$PLENV_ROOT/bin:$PATH"
 
-[ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
-eval "$(plenv init - zsh)"
+	[ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
+	eval "$(plenv init - zsh)"
+fi
 
-# python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# pyenv (python)
+if [ -e ~/.pyenv ]; then
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PATH="$PYENV_ROOT/bin:$PATH"
 
-[ -f ~/.pyenv/completions/pyenv.zsh ] && source ~/.pyenv/completions/pyenv.zsh
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init -)"
+	[ -f ~/.pyenv/completions/pyenv.zsh ] && source ~/.pyenv/completions/pyenv.zsh
+	eval "$(pyenv init - zsh)"
+	eval "$(pyenv virtualenv-init -)"
+fi
 
 if $(env_changes); then
   echo "There are unmerged changes to the dot files, please merge";
