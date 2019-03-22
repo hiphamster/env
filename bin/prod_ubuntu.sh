@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# basic packages
 sudo apt-file update
 sudo apt-get install -y \
 	make \
@@ -12,8 +13,12 @@ sudo apt-get install -y \
 	zsh \
 	w3m
 
-# docker without root
+# install docker
 sudo apt-get install -y docker.io
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+
+# docker without root
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
