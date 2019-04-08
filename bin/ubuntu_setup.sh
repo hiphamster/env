@@ -1,3 +1,6 @@
+
+
+
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -11,7 +14,7 @@ sudo apt-file update
 
 apt-get install docker.io
 
-apt-get install zsh neovim tmux curl git ack-grep wget curl git
+apt-get install -y zsh neovim tmux curl git ack-grep wget curl git aria2
 
 
 # docker without root
