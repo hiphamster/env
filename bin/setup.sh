@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+git config --global user.email "ayelluas@gmail.com"
+git config --global user.name "Alex Yelluas"
+
+
 # install oh-my-zsh
 test -d ~/.oh-my-zsh || \
   curl -L -o - https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | zsh
@@ -27,3 +32,7 @@ done
 destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
 command="ln -s $(pwd)/robbyrussell-ay.zsh-theme $destination"
 [ -f $destination ] || eval $command
+
+# nvim plugin manager
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
