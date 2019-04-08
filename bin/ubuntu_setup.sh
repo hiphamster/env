@@ -1,54 +1,49 @@
+#!/bin/sh
 
+apt-get update
+
+sudo apt-get install -y  \
+  ack-grep \
+  apt-file \
+  aria2
+  build-essential \
+  curl
+  git
+  libbz2-dev \
+  libffi-dev \
+  liblzma-dev \
+  libncurses5-dev \ 
+  libncursesw5-dev \
+  libreadline-dev \ 
+  libsqlite3-dev \
+  libssl-dev \
+  llvm \
+  make \
+  neovim 
+  python-openssl \
+  tk-dev \
+  tmux
+  wget
+  xz-utils \
+  zlib1g-dev \
+  zsh 
+
+
+user='alex'
+password='hello123'
+home="/home/${user}"
+/usr/sbin/useradd -m -U -G sudo -s /bin/zsh ${user}
+/bin/echo ${user}:${password} | /usr/sbin/chpasswd
+
+mkdir -p "/home/${user}"
+mkdir -p "/home/${user}/.config"
+chown -R "${user}:${user}"
 
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev libffi-dev liblzma-dev python-openssl 
-
-sudo apt-get install apt-file
-sudo apt-file update
-
-apt-get install docker.io
-
-apt-get install -y zsh neovim tmux curl git ack-grep wget curl git aria2
-
-
-# docker without root
-sudo groupadd docker
-sudo usermod -aG docker $USER
-
-
-
-# Other ports
-#yes | sudo /opt/local/bin/port install antiword \
-#aria2 \
-#bzip2 \
-#gd2 \
-#gdbm \
-#gnupg2 \
-#gnutls \
-#mariadb \
-#mpg123 \
-#mysql_select \
-#mycli \
-#parallel \
-#pcre \
-#perl5 \
-#pgcli \
-#python27 \
-#python2_select \
-#python36 \
-#python3_select \
-#python_select \
-#readline \
-#sqlite3 \
-#tidy \
-#tree \
-#unzip \
-#p7zip \
-
-
+# docker
+# apt-get install -y docker.io
+# groupadd docker
+# usermod -aG docker $USER
