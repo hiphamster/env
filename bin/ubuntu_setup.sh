@@ -1,6 +1,10 @@
 #!/bin/sh
 
 apt-get update
+apt-get install -y apt-file \
+  zsh
+
+apt-file update
 
 sudo apt-get install -y  \
   ack-grep \
@@ -21,12 +25,13 @@ sudo apt-get install -y  \
   make \
   neovim 
   python-openssl \
+  sudo \
   tk-dev \
   tmux
   wget
   xz-utils \
-  zlib1g-dev \
-  zsh 
+  zlib1g-dev
+
 
 
 user='alex'
