@@ -33,17 +33,18 @@ alias chme='sudo chown -R ${USER}:staff'
 alias procperuser='ps ax -o user | sort | uniq -c | sort -nr'
 
 # other
-# alias youtube-dl='docker run --rm -u $(id -u):$(id -g) -v $PWD:/data vimagick/youtube-dl'
-# alias ffmpeg='docker run jrottenberg/ffmpeg'
 alias crontab="VIM_CRONTAB=true crontab"
-alias vim=nvim
-alias vi=vim
 
 # docker
 alias docker_rm_exited='docker rm $(docker ps -a | grep -i exited | awk "{print $1}")'
+alias dps='docker ps --format "{{.ID}}: {{.Names}} {{.Status}}"'
 
 # darwin
 alias ldd='otool -L'
 
 # filter
 alias color_code_filter='gsed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
+
+# git
+alias git_cid_from_tag='git rev-list -n 1 v0.5.0'
+alias git_short_cid='git rev-parse --short'
