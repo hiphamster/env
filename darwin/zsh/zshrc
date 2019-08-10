@@ -59,4 +59,22 @@ bindkey -v
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
 
+# this also needs to run in every interactive shell,
+# in order for `pyenv activate` to work (it creates 
+# the pyenv functino). One side effect is that path
+# to pyenv shims is pre-pended to PATH one extra time
+eval "$(pyenv init - zsh)"
+
+# moving it to ~/.zshrc, so it's executed on every
+[ -f ~/.pyenv/completions/pyenv.zsh ] && source ~/.pyenv/completions/pyenv.zsh
+# it modifies PATH, which is fixed by dedup 
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init -)"
+
+[ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
+eval "$(plenv init - zsh)"
+
+# dedup PATH
+export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+
 # echo "ZSHRC"

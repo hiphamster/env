@@ -8,12 +8,14 @@ export PLENV_ROOT="${HOME}/.plenv"
 export PATH="${PYENV_ROOT}/bin:${PLENV_ROOT}/bin:${PATH}" 
 export PATH="${PATH}:${HOME}/bin"
 
-[ -f ~/.pyenv/completions/pyenv.zsh ] && source ~/.pyenv/completions/pyenv.zsh
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init -)"
+# [ -f ~/.pyenv/completions/pyenv.zsh ] && source ~/.pyenv/completions/pyenv.zsh
+# moving it to ~/.zshrc, so it's executed on every
+# interactive shell (it modifies PATH var)
+# eval "$(pyenv init - zsh)"
+# eval "$(pyenv virtualenv-init -)"
 
-[ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
-eval "$(plenv init - zsh)"
+# [ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
+# eval "$(plenv init - zsh)"
 
 # it needs to run only once, on login shell
 source ${HOME}/.zshenv.source_from_zprofile
