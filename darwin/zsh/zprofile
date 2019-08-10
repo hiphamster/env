@@ -1,8 +1,21 @@
-#
-# Executes commands at login pre-zshrc.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#   Alex Yelluas <ayelluas@gmail.com>
-#
+# source order:
+# .zshenv -> [.zprofile if login] -> [.zshrc if interactive] -> [.zlogin if login] -> [.zlogout sometimes]
 
+export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
+
+export PYENV_ROOT="${HOME}/.pyenv"
+export PLENV_ROOT="${HOME}/.plenv"
+export PATH="${PYENV_ROOT}/bin:${PLENV_ROOT}/bin:${PATH}" 
+export PATH="${PATH}:${HOME}/bin"
+
+[ -f ~/.pyenv/completions/pyenv.zsh ] && source ~/.pyenv/completions/pyenv.zsh
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init -)"
+
+[ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
+eval "$(plenv init - zsh)"
+
+# it needs to run only once, on login shell
+source ${HOME}/.zshenv.source_from_zprofile
+
+# echo "ZPROFILE"

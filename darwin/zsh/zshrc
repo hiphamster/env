@@ -1,9 +1,5 @@
-#
-# Sets Oh My Zsh options.
-#
-# Authors:
-#   Alex Yelluas <ayelluas@gmail.com>
-#
+# source order:
+# .zshenv -> [.zprofile if login] -> [.zshrc if interactive] -> [.zlogin if login] -> [.zlogout sometimes]
 
 # Path to my env package
 export ENV_HOME="${HOME}/.config/env"
@@ -44,14 +40,6 @@ plugins=(git)
 [ -f $HOME/.functions ] && 
   source $HOME/.functions
 
-# neovim is built separately from macports
-PATH="/opt/neovim/bin:${PATH}"
-
-# Add macports to path
-PATH="/opt/local/sbin:/opt/local/bin:${PATH}"
-PATH="/Applications/VirtualBox.app/Contents/MacOS:${PATH}"
-export PATH="${PATH}:${HOME}/bin"
-
 # export MANPATH="/usr/local/man:$MANPATH"
 [ -f $ZSH/oh-my-zsh.sh ] && 
   source $ZSH/oh-my-zsh.sh
@@ -71,35 +59,4 @@ bindkey -v
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
 
-# perl
-export PLENV_ROOT="$HOME/.plenv"
-export PATH="$PLENV_ROOT/bin:$PATH"
-
-[ -f ~/.plenv/completions/plenv.zsh ] && 
-  source ~/.plenv/completions/plenv.zsh
-eval "$(plenv init - zsh)"
-
-# python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-[ -f ~/.pyenv/completions/pyenv.zsh ] && 
-  source ~/.pyenv/completions/pyenv.zsh
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init -)"
-
-if $(env_changes); then
-  echo "There are unmerged changes to the dot files, please merge";
-  echo "execute 'pushd \$ENV_HOME; git status' to see details";  
-fi
-
-
-## google cloud
-#[ -f /Users/ayelluas/stuff/google-cloud-sdk/completion.zsh.inc ] && 
-#  source /Users/ayelluas/stuff/google-cloud-sdk/completion.zsh.inc 
-#
-#[ -f /Users/ayelluas/stuff/google-cloud-sdk/path.zsh.inc ] && 
-#  source /Users/ayelluas/stuff/google-cloud-sdk/path.zsh.inc 
-#
-#export CLOUDSDK_COMPUTE_ZONE=us-west1-c
-#export CLOUDSDK_COMPUTE_REGION=us-west1
+# echo "ZSHRC"

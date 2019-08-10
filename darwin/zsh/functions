@@ -1,4 +1,5 @@
 function str2epoch () { date -d "$1" "+%s"; }
+
 function epoch2str () { date -d "@$1"; }
 
 function env_changes () {
@@ -17,4 +18,8 @@ function env_changes () {
   else
     echo false;
   fi
+}
+
+function ppath() {
+  echo $PATH | awk -F: '{ for(i=1; i<NF; i++) {print $i;}}'
 }
