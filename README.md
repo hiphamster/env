@@ -61,15 +61,3 @@ bindings. It should not change the shell environment.
 This file is sourced by login shells during logout. It should be used for
 displaying messages and the deletion of files.
 
-Authors
--------
-
-*The authors of these files should be contacted via the [issue tracker][4].*
-
-  - [Sorin Ionescu](https://github.com/sorin-ionescu)
-
-[1]: http://www.kornshell.com
-[2]: http://en.wikipedia.org/wiki/Fortune_(Unix)
-[3]: http://www.manpagez.com/man/1/msgs
-[4]: https://github.com/sorin-ionescu/oh-my-zsh/issues
-
