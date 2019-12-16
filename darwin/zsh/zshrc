@@ -77,4 +77,6 @@ eval "$(plenv init - zsh)"
 # dedup PATH
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 
+export HTML_TIDY="${HOME}/.config/env/tidy.conf"
+
 # echo "ZSHRC"
