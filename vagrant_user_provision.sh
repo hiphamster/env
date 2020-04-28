@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 # Vagrant user customization
 
 OS=$(uname -s | tr '[A-Z]' '[a-z]')
@@ -13,18 +13,20 @@ DOT_FILES=($(ls -1 ${FILE_PATH}))
 
 sudo sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+sudo chown -R vagrant:vagrant ~/.oh-my-zsh
+
 for file in $DOT_FILES; do
   destination="${HOME}/.$file"
   rm -f ${destination}
-  command="ln -sf ${FILE_PATH}/${file} $destination"
+  ln -sf ${FILE_PATH}/${file} $destination
   # in zsh $command has to be evaled
-  eval $command
+  # eval $command
 done
 
 # oh-my-zsh theme customization
 destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
 
-command="ln -s $(pwd)/robbyrussell-ay.zsh-theme $destination"
+command="ln -sf $(pwd)/robbyrussell-ay.zsh-theme $destination"
 eval $command
 
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
