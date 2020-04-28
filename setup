@@ -3,13 +3,23 @@ OS=$(uname -s | tr '[A-Z]' '[a-z]')
 ENV_HOME="${HOME}/.config/env"
 mkdir -p $ENV_HOME
 _SHELL=$(echo $SHELL | awk -F '/' '{print $NF}')
+echo $_SHELL
 FILE_PATH="${ENV_HOME}/${OS}/${_SHELL}"
+echo $FILE_PATH
+
+# install oh-my-zsh
+[ -d ${HOME}/.oh-my-zsh ] && rm -rf ${HOME}/.oh-my-zsh
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 
 DOT_FILES=($(ls -1 ${FILE_PATH}))
+echo $DOT_FILES
 
 for file in $DOT_FILES; do
   destination="${HOME}/.$file"
-  command="ln -s ${FILE_PATH}/${file} $destination"
+  [ -e $destination ] && rm -rf $destination
+  command="ln -sf ${FILE_PATH}/${file} $destination"
+  echo $command
   # in zsh $command has to be evaled
   [ -f $destination ] || eval $command
 done
@@ -19,13 +29,20 @@ destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
 command="ln -s $(pwd)/robbyrussell-ay.zsh-theme $destination"
 [ -f $destination ] || eval $command
 
-test -d $HOME/.tmux/tpm ||
+test -d $HOME/.tmux/plugins/tpm ||
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 test -d $HOME/.plenv ||
   git clone https://github.com/tokuhirom/plenv.git ~/.plenv
+
 test -d $HOME/.pyenv ||
-  git clone https://github.com/pyenv/pyenv.git ~/.pyenv;
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+test -d $HOME/.pyenv/plugins/pyenv-update ||
+  git clone git://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
+
 test -d $HOME/.pyenv/plugins/pyenv-virtualenv ||
   git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+
 test -d $HOME/.vim/bundle ||
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
