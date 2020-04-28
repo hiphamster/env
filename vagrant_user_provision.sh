@@ -11,14 +11,15 @@ FILE_PATH="${ENV_HOME}/${OS}/${_SHELL}"
 
 DOT_FILES=($(ls -1 ${FILE_PATH}))
 
+sudo sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 for file in $DOT_FILES; do
   destination="${HOME}/.$file"
+  rm -f ${destination}
   command="ln -sf ${FILE_PATH}/${file} $destination"
   # in zsh $command has to be evaled
   eval $command
 done
-
-sudo sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # oh-my-zsh theme customization
 destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
