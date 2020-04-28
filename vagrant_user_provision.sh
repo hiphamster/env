@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Vagrant user customization
 
 OS=$(uname -s | tr '[A-Z]' '[a-z]')
