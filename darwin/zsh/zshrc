@@ -46,6 +46,7 @@ plugins=(git)
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8  
 
 # timeout after hitting 'esc' 
 export KEYTIMEOUT=1
@@ -74,9 +75,10 @@ eval "$(pyenv virtualenv-init -)"
 [ -f ~/.plenv/completions/plenv.zsh ] && source ~/.plenv/completions/plenv.zsh
 eval "$(plenv init - zsh)"
 
-# dedup PATH
-export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+export PATH="${PATH}:${HOME}/.yarn/bin"
 
 export HTML_TIDY="${HOME}/.config/env/tidy.conf"
 
-# echo "ZSHRC"
+# dedup PATH
+export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+
