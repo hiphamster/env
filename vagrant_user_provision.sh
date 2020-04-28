@@ -25,9 +25,10 @@ done
 
 # oh-my-zsh theme customization
 destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
+ln -sf ~/.config/env/robbyrussell-ay.zsh-theme $destination
 
-command="ln -sf $(pwd)/robbyrussell-ay.zsh-theme $destination"
-eval $command
+
+git clone https://github.com/tokuhirom/plenv.git ~/.plenv
 
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
