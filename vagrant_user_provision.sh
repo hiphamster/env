@@ -5,8 +5,6 @@ OS=$(uname -s | tr '[A-Z]' '[a-z]')
 ENV_HOME="${HOME}/.config/env"
 mkdir -p $ENV_HOME
 
-sudo sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 _SHELL=zsh
 
 FILE_PATH="${ENV_HOME}/${OS}/${_SHELL}"
@@ -19,6 +17,8 @@ for file in $DOT_FILES; do
   # in zsh $command has to be evaled
   eval $command
 done
+
+sudo sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # oh-my-zsh theme customization
 destination="${HOME}/.oh-my-zsh/themes/robbyrussell-ay.zsh-theme"
