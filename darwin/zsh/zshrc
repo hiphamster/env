@@ -71,6 +71,8 @@ export KEYTIMEOUT=1
 
 # do not share history files between shessions
 setopt nosharehistory
+setopt hist_ignore_dups 
+setopt hist_ignore_all_dups
 
 # vi mode
 bindkey -v
@@ -82,18 +84,21 @@ export ARCHFLAGS="-arch $(uname -m)"
 export PLENV_ROOT="$HOME/.plenv"
 export PATH="$PLENV_ROOT/bin:$PATH"
 
-[ -f ~/.plenv/completions/plenv.zsh ] && 
-  source ~/.plenv/completions/plenv.zsh && 
+if [ -f ~/.plenv/completions/plenv.zsh ]; then 
+  source ~/.plenv/completions/plenv.zsh
   eval "$(plenv init - zsh)"
+fi
 
 # python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-[ -f ~/.pyenv/completions/pyenv.zsh ] && 
+if [ -f ~/.pyenv/completions/pyenv.zsh ]; then 
   source ~/.pyenv/completions/pyenv.zsh
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init -)"
+  eval "$(pyenv init --path )"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 # mysql / mariadb
 if [ -e /opt/local/lib/mariadb-10.1 ]; then
@@ -101,20 +106,7 @@ if [ -e /opt/local/lib/mariadb-10.1 ]; then
   export PATH=$PATH:$MYSQL_HOME/bin
 fi
 
-if $(env_changes); then
-  echo "There are unmerged changes to the dot files, please merge";
-  echo "execute 'pushd \$ENV_HOME; git status' to see details";  
-fi
 
-# google cloud
-[ -f /Users/ayelluas/stuff/google-cloud-sdk/completion.zsh.inc ] && 
-  source /Users/ayelluas/stuff/google-cloud-sdk/completion.zsh.inc 
-
-[ -f /Users/ayelluas/stuff/google-cloud-sdk/path.zsh.inc ] && 
-  source /Users/ayelluas/stuff/google-cloud-sdk/path.zsh.inc 
-
-export CLOUDSDK_COMPUTE_ZONE=us-west1-c
-export CLOUDSDK_COMPUTE_REGION=us-west1
 
 # https://github.com/sharkdp/bat
 # bat pager is evil
